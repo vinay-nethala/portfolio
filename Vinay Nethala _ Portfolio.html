@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vinay Nethala | CSE Student, Data & Web</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#06162b;--bg2:#0b2140;--card:#0d2748;--ink:#e8f1fb;--mute:#93a9c4;--a:#7ee8d0;--b:#ffc857;--line:#1c3a63;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f2f7fc;--bg2:#e4eef9;--card:#fff;--ink:#0a2140;--mute:#4a6482;--a:#00806b;--b:#b56f00;--line:#c9daec}}
+:root[data-theme="light"]{--bg:#f2f7fc;--bg2:#e4eef9;--card:#fff;--ink:#0a2140;--mute:#4a6482;--a:#00806b;--b:#b56f00;--line:#c9daec}
+:root[data-theme="dark"]{--bg:#06162b;--bg2:#0b2140;--card:#0d2748;--ink:#e8f1fb;--mute:#93a9c4;--a:#7ee8d0;--b:#ffc857;--line:#1c3a63}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Figtree,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--b);outline-offset:3px}
+#net{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.55;pointer-events:none}
+.glow{position:fixed;z-index:0;border-radius:50%;filter:blur(90px);opacity:.22;pointer-events:none;animation:drift 18s ease-in-out infinite alternate}
+.g1{width:420px;height:420px;background:var(--a);top:-100px;right:-80px}
+.g2{width:380px;height:380px;background:var(--b);bottom:-120px;left:-100px;animation-delay:-9s}
+@keyframes drift{to{transform:translate(-60px,50px) scale(1.15)}}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(10px + env(safe-area-inset-top,0px)) 20px 10px;display:flex;justify-content:space-between;align-items:center;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav b{font-family:"Bricolage Grotesque",serif;font-size:20px}
+nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;font-size:14px}
+nav ul a{text-decoration:none;color:var(--mute);transition:color .2s}nav ul a:hover{color:var(--a)}
+.tg{background:none;border:1px solid var(--line);color:var(--ink);border-radius:20px;padding:4px 12px;cursor:pointer;font:inherit;font-size:13px}
+main{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 22px}
+section{padding:80px 0 20px}
+h2{font-size:clamp(28px,4vw,40px);margin-bottom:28px;display:flex;align-items:center;gap:16px}
+h2::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--a),transparent);transform-origin:left}
+#hero{min-height:100vh;display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;padding-top:90px}
+.hi{color:var(--a);font-weight:600;margin-bottom:10px}
+#hero h1{font-size:clamp(46px,8vw,92px);font-weight:800;letter-spacing:-.03em}
+#hero h1 span{display:inline-block;opacity:0;transform:translateY(40px) rotate(4deg);animation:up .7s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.role{font-size:clamp(18px,2.4vw,24px);margin:18px 0 14px;min-height:1.6em;color:var(--b);font-weight:500}
+.role i{display:inline-block;width:2px;height:1em;background:var(--b);margin-left:3px;vertical-align:-2px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.lede{color:var(--mute);max-width:520px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}
+.btn{border:1.5px solid var(--a);color:var(--a);background:transparent;padding:11px 22px;border-radius:999px;font:600 15px Figtree,sans-serif;cursor:pointer;text-decoration:none;transition:.25s;display:inline-flex;gap:8px;align-items:center}
+.btn:hover{background:var(--a);color:var(--bg);transform:translateY(-2px)}
+.btn.p{background:var(--b);border-color:var(--b);color:#1a1200}
+.btn.p:hover{background:var(--a);border-color:var(--a);color:var(--bg)}
+.links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}.links a{color:var(--mute);text-decoration:none;border-bottom:1px solid var(--line)}.links a:hover{color:var(--a)}
+.profile{position:relative;justify-self:center;width:min(320px,80vw);aspect-ratio:1}
+.ring{position:absolute;inset:0;border-radius:50%;border:2px dashed var(--a);animation:sp 30s linear infinite;opacity:.7}
+.ring.r2{inset:-22px;border-color:var(--b);animation-duration:45s;animation-direction:reverse;border-style:dotted}
+@keyframes sp{to{transform:rotate(360deg)}}
+.core{position:absolute;inset:26px;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 30% 25%,var(--bg2),var(--card));border:1px solid var(--line);display:grid;place-items:center;text-align:center;box-shadow:0 0 60px color-mix(in srgb,var(--a) 25%,transparent)}
+.core img{width:100%;height:100%;object-fit:cover}
+.core strong{font:800 68px "Bricolage Grotesque",serif;color:var(--a);display:block;line-height:1}
+.core small{color:var(--mute);font-size:13px}
+.chip-f{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 12px;font-size:13px;font-weight:600;animation:fl 5s ease-in-out infinite alternate}
+.chip-f:nth-of-type(3){top:2%;right:-6%}.chip-f:nth-of-type(4){bottom:8%;left:-8%;animation-delay:-2s;color:var(--b)}.chip-f:nth-of-type(5){bottom:-2%;right:4%;animation-delay:-3.5s;color:var(--a)}
+@keyframes fl{to{transform:translateY(-12px)}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+.stat b{font:800 34px "Bricolage Grotesque",serif;color:var(--b);display:block}.stat span{font-size:13px;color:var(--mute)}
+.about{font-size:18px;max-width:760px;color:var(--ink)}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;transition:.3s;transform-style:preserve-3d}
+.box:hover{border-color:var(--a);box-shadow:0 12px 40px -18px var(--a)}
+.box h3{font-size:19px;margin-bottom:12px;color:var(--b)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chips span{font-size:13.5px;padding:4px 12px;border-radius:8px;background:var(--bg2);border:1px solid var(--line)}
+.tl{position:relative;padding-left:28px;border-left:2px solid var(--line);display:grid;gap:22px}
+.tl .box{position:relative}.tl .box::before{content:"";position:absolute;left:-37px;top:26px;width:14px;height:14px;border-radius:50%;background:var(--a);box-shadow:0 0 0 5px var(--bg),0 0 14px var(--a)}
+.when{font-size:13px;color:var(--a);font-weight:600}
+.box ul{margin:10px 0 0;padding-left:18px;color:var(--mute)}.box li{margin:4px 0}
+.pj{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px}
+.pj .box{display:flex;flex-direction:column;gap:6px}
+.pj h3{font-size:22px}.stack{font-size:13px;color:var(--a)}
+.cert{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.cert a,.cert div{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--b);border-radius:10px;padding:12px 14px;font-size:14.5px;transition:.25s}
+.cert a{border-left-color:var(--a)}.cert a:hover{transform:translateX(5px)}
+.ed{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.big{font:800 30px "Bricolage Grotesque",serif;color:var(--b)}
+.contact{text-align:center;padding-bottom:60px}.contact p{color:var(--mute);max-width:520px;margin:0 auto 22px}
+.contact-form{max-width:620px;margin:28px auto 0;text-align:left;display:grid;gap:14px}
+.contact-form label{display:grid;gap:6px;font-weight:600}
+.contact-form input,.contact-form textarea{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);padding:12px 14px;font:inherit}
+.contact-form textarea{min-height:150px;resize:vertical}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--a)}
+.contact-form button{justify-self:start}
+.contact-status{min-height:1.5em;margin:0!important;text-align:left}
+.contact-trap{display:none!important}
+footer{position:relative;z-index:1;text-align:center;color:var(--mute);font-size:13px;padding:24px 0 34px;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in{opacity:1;transform:none}
+.ln{transform:scaleX(0)}
+#modal{position:fixed;inset:0;z-index:50;background:rgba(2,8,18,.75);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:16px}
+#modal.on{display:flex}
+.sheet{background:#fff;color:#111;width:min(820px,100%);max-height:92vh;overflow:auto;border-radius:12px;padding:34px 38px;font:14px/1.5 Figtree,sans-serif;animation:pop .3s ease}
+@keyframes pop{from{opacity:0;transform:scale(.96) translateY(14px)}}
+.bar{position:sticky;top:-34px;background:#fff;margin:-34px -38px 14px;padding:12px 38px;display:flex;gap:10px;justify-content:flex-end;border-bottom:1px solid #ddd}
+.bar .btn{border-color:#004f90;color:#004f90;padding:7px 16px;font-size:13px}.bar .btn:hover{background:#004f90;color:#fff}
+.sheet h1{font-size:28px;text-align:center;margin:0;color:#004f90}.sheet .ct{text-align:center;font-size:12.5px;margin:4px 0 10px}
+.sheet h4{margin:14px 0 6px;font:800 16px "Bricolage Grotesque",serif;color:#004f90;border-bottom:1.5px solid #004f90}
+.sheet ul{margin:4px 0;padding-left:18px}.sheet .rw{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media print{body>*:not(#modal){display:none!important}#modal{position:static;background:none;display:block;padding:0}.sheet{max-height:none;box-shadow:none;padding:0;width:100%}.bar{display:none}}
+@media (max-width:820px){#hero{grid-template-columns:1fr;text-align:left;padding-top:110px}.profile{order:-1;width:min(230px,60vw);margin:0 auto 12px}nav ul{display:none}.stats{grid-template-columns:1fr 1fr}.sheet{padding:22px}.bar{margin:-22px -22px 12px;padding:10px 22px;top:-22px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,#hero h1 span{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="net" aria-hidden="true"></canvas><div class="glow g1"></div><div class="glow g2"></div>
+<nav><b>VN.</b><ul><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#certs">Certificates</a></li><li><a href="#contact">Contact</a></li></ul><button class="tg" id="tg" aria-label="Toggle theme">Theme</button></nav>
+
+<main>
+<section id="hero">
+ <div>
+  <div class="hi">Hello, I'm</div>
+  <h1 aria-label="Vinay Nethala"><span style="animation-delay:.1s">Vinay</span> <span style="animation-delay:.3s">Nethala</span></h1>
+  <div class="role"><span id="typed"></span><i></i></div>
+  <p class="lede">Computer Science student who turns raw data into clear insights and builds fast, responsive web apps. Skilled in Python, SQL, Power BI and React.</p>
+  <div class="btns">
+   <button class="btn p" id="view">View Resume</button>
+   <button class="btn" id="dl">Download Resume</button>
+  </div>
+  <div class="links"><a href="mailto:vinaynethala07@gmail.com">Email</a><a href="https://github.com/vinay-nethala" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/vinay-nethala" target="_blank" rel="noopener">LinkedIn</a><a href="tel:+916300663764">+91 63006 63764</a></div>
+ </div>
+ <div class="profile"><div class="ring r2"></div><div class="ring"></div><div class="core"><img src="vinay.jpeg" alt="Vinay Nethala"></div>
+  <div class="chip-f">Python</div><div class="chip-f">Power BI</div><div class="chip-f">React.js</div></div>
+</section>
+
+<div class="stats rv">
+ <div class="stat"><b data-n="8.92" data-d="2">0</b><span>B.Tech CGPA</span></div>
+ <div class="stat"><b data-n="91" data-s="%">0</b><span>Diploma score</span></div>
+ <div class="stat"><b data-n="500" data-s="+">0</b><span>CodeChef problems solved</span></div>
+ <div class="stat"><b data-n="2" data-s="">0</b><span>Internships</span></div>
+</div>
+
+<section id="about"><h2 class="rv">About me</h2>
+<p class="about rv">I'm a Computer Science Engineering student with hands-on experience in software development and data analytics. I work with Python, Excel, SQL, Power BI and modern web tools, and I like turning data into decisions and ideas into user-friendly products. I've completed a diploma and am now in my B.Tech at Aditya Engineering College, Surampalem.</p></section>
+
+<section id="skills"><h2 class="rv">Technical skills</h2>
+<div class="sk">
+ <div class="box rv"><h3>Languages</h3><div class="chips"><span>Python</span><span>JavaScript</span><span>SQL</span><span>C++</span><span>C</span></div></div>
+ <div class="box rv"><h3>Frontend</h3><div class="chips"><span>HTML5</span><span>CSS3</span><span>React.js</span><span>Bootstrap</span><span>Tailwind CSS</span></div></div>
+ <div class="box rv"><h3>Data analytics</h3><div class="chips"><span>Excel</span><span>SQL</span><span>Power BI</span><span>MySQL</span></div></div>
+ <div class="box rv"><h3>Tools</h3><div class="chips"><span>Git</span><span>GitHub</span><span>Docker</span><span>VS Code</span><span>REST APIs</span><span>Chrome APIs</span></div></div>
+ <div class="box rv"><h3>Core subjects</h3><div class="chips"><span>Operating Systems</span><span>DBMS</span></div></div>
+ <div class="box rv"><h3>Soft skills</h3><div class="chips"><span>Problem solving</span><span>Critical thinking</span><span>Leadership</span><span>Teamwork</span></div></div>
+</div></section>
+
+<section id="experience"><h2 class="rv">Experience</h2>
+<div class="tl">
+ <div class="box rv"><div class="when">May 2025 – June 2025</div><h3>Frontend Development Intern</h3><div class="stack">1Stop.ai / Raise Digital</div>
+  <ul><li>Completed an industrial program in front-end web development.</li><li>Built a single-page website with HTML, CSS and JavaScript.</li><li>Applied responsive design to create a user-friendly interface.</li><li>Delivered the project under mentors and company representatives.</li></ul></div>
+ <div class="box rv"><div class="when">May 2025 – June 2025</div><h3>Cloud Computing Intern</h3><div class="stack">APSSDC</div>
+  <ul><li>Learned IaaS, PaaS, SaaS, virtualization and deployment models.</li><li>Explored cloud storage, networking, security and infrastructure through hands-on activities.</li></ul></div>
+</div></section>
+
+<section id="projects"><h2 class="rv">Projects</h2>
+<div class="pj">
+ <div class="box rv"><h3>News Reader Application</h3><div class="stack">React.js · Vite · Tailwind CSS · REST API</div>
+  <ul><li>Responsive news reader with keyword search, refresh, infinite scroll and bookmarks.</li><li>Online/offline detection and persistent bookmarks, tuned for mobile, tablet and desktop.</li></ul>
+  <p><a class="btn" href="https://github.com/vinay-nethala/news_reader_app" target="_blank" rel="noopener">View on GitHub</a></p></div>
+ <div class="box rv"><h3>Productivity Suite (Chrome Extension)</h3><div class="stack">JavaScript · HTML5 · CSS3 · Chrome APIs · Docker</div>
+  <ul><li>Lightweight dashboard with quick notes, live clock and browser session management.</li><li>Dual storage layer (Chrome Storage with localStorage fallback), containerized with Docker and Nginx.</li></ul>
+  <p><a class="btn" href="https://github.com/vinay-nethala/chrome-exention" target="_blank" rel="noopener">View on GitHub</a></p></div>
+</div></section>
+
+<section id="certs"><h2 class="rv">Certifications & achievements</h2>
+<div class="cert rv">
+ <a href="https://nptel.ac.in/noc/E_Certificate/NOC26CS37S76620025605026229" target="_blank" rel="noopener">NPTEL: Internet of Things (Elite, 82%)</a>
+ <div>HackerRank: SQL (Basic)</div><div>Certiport: HTML & CSS</div><div>1Stop.ai: Frontend Development</div>
+ <a href="https://drive.google.com/file/d/1u5mrQmTjT1WDutOY5qbEJ9tRQCGGs46y/view?usp=sharing" target="_blank" rel="noopener">APSSDC: Cloud Computing</a>
+ <a href="https://lms.skilldzire.com/verify_certificate/cdqg01f0eo" target="_blank" rel="noopener">SkillDzire: Machine Learning</a>
+ <div>CodeChef: 500+ problems, Gold Badge</div><div>4th place, State-Level National Science Day Quiz (2020)</div>
+</div></section>
+
+<section id="education"><h2 class="rv">Education</h2>
+<div class="ed">
+ <div class="box rv"><div class="when">2024 – 2027</div><h3>B.Tech, Computer Science & Engineering</h3><div class="stack">Aditya Engineering College, Surampalem</div><div class="big">8.92 / 10 CGPA</div></div>
+ <div class="box rv"><div class="when">2021 – 2024</div><h3>Diploma, Computer Science & Engineering</h3><div class="stack">Aditya Polytechnic College</div><div class="big">91%</div></div>
+</div></section>
+
+<section id="contact" class="contact"><h2 class="rv">Let's work together</h2>
+<p class="rv">Open to internships and entry-level roles in data analytics and web development. Send me a message.</p>
+<form class="contact-form rv" id="contact-form" action="https://formspree.io/f/mdekjvge" method="POST">
+ <label for="contact-email">Your email</label>
+ <input id="contact-email" type="email" name="email" autocomplete="email" required>
+ <label for="contact-message">Your message</label>
+ <textarea id="contact-message" name="message" required></textarea>
+ <input class="contact-trap" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+ <button class="btn p" type="submit">Send message</button>
+ <p class="contact-status" id="contact-status" aria-live="polite"></p>
+</form>
+<div class="btns rv" style="justify-content:center"><a class="btn p" href="mailto:vinaynethala07@gmail.com">Email me</a><a class="btn" href="https://www.linkedin.com/in/vinay-nethala" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/vinay-nethala" target="_blank" rel="noopener">GitHub</a></div></section>
+</main>
+<footer>© 2026 Vinay Nethala · Built with care</footer>
+
+<div id="modal" role="dialog" aria-modal="true" aria-label="Resume"><div class="sheet" id="sheet">
+ <div class="bar"><button class="btn" id="dl2">Download PDF</button><button class="btn" id="close">Close</button></div>
+ <h1>VINAY NETHALA</h1>
+ <div class="ct">vinaynethala07@gmail.com · +91 63006 63764 · github.com/vinay-nethala · linkedin.com/in/vinay-nethala · vinay-portfolio-phi.vercel.app</div>
+ <h4>About me</h4><div>Computer Science Engineering student with hands-on experience in software development and data analytics. Skilled in Python, Excel, SQL, Power BI and modern web technologies, with strong analytical and problem-solving abilities.</div>
+ <h4>Technical proficiencies</h4>
+ <ul><li><b>Languages:</b> Python, JavaScript, SQL, C++, C</li><li><b>Frontend:</b> HTML5, CSS3, React.js, Bootstrap, Tailwind CSS</li><li><b>Data analytics:</b> Excel, SQL, Power BI</li><li><b>Database:</b> MySQL</li><li><b>Tools:</b> Git, GitHub, Docker, VS Code, REST APIs, Chrome APIs</li><li><b>Core subjects:</b> Operating Systems, DBMS</li><li><b>Soft skills:</b> Problem solving, critical thinking, leadership, teamwork</li></ul>
+ <h4>Experience</h4>
+ <div class="rw"><b>Frontend Development Intern | 1Stop.ai / Raise Digital</b><i>May 2025 – June 2025</i></div>
+ <ul><li>Completed an industrial program in front-end web development.</li><li>Built a single-page website with HTML, CSS and JavaScript.</li><li>Applied responsive design principles for a user-friendly interface.</li></ul>
+ <div class="rw"><b>Cloud Computing Intern | APSSDC</b><i>May 2025 – June 2025</i></div>
+ <ul><li>Practical knowledge of IaaS, PaaS, SaaS, virtualization and deployment models.</li><li>Hands-on with cloud storage, networking, security and infrastructure.</li></ul>
+ <h4>Projects</h4>
+ <div><b>News Reader Application</b> | <i>React.js, Vite, Tailwind CSS, REST API</i></div>
+ <ul><li>Responsive news reader with search, refresh, infinite scrolling and bookmarks.</li><li>Online/offline detection and persistent bookmarks; optimized for all screen sizes.</li></ul>
+ <div><b>Productivity Suite, Chrome Extension</b> | <i>JavaScript, HTML5, CSS3, Chrome APIs, Docker</i></div>
+ <ul><li>Dashboard with quick notes, real-time clock and session management.</li><li>Chrome Storage with localStorage fallback; containerized with Docker and Nginx.</li></ul>
+ <h4>Certifications & achievements</h4>
+ <ul><li>NPTEL: Internet of Things, Elite (82%)</li><li>HackerRank SQL (Basic); Certiport HTML & CSS; 1Stop.ai Frontend Development</li><li>APSSDC Cloud Computing; SkillDzire Machine Learning</li><li>CodeChef: 500+ problems solved, Gold Badge</li><li>4th place, State-Level National Science Day Quiz (2020)</li></ul>
+ <h4>Education</h4>
+ <div class="rw"><span><b>B.Tech, CSE</b> | Aditya Engineering College, Surampalem | <b>CGPA 8.92/10</b></span><i>2024 – 2027</i></div>
+ <div class="rw"><span><b>Diploma, CSE</b> | Aditya Polytechnic College | <b>91%</b></span><i>2021 – 2024</i></div>
+</div></div>
+
+<script>
+// Optional: paste a direct link to your resume PDF (e.g. Google Drive/GitHub raw) to make the buttons open the real file.
+const RESUME_URL="";
+const $=s=>document.querySelector(s),modal=$("#modal");
+const openR=()=>{if(RESUME_URL){window.open(RESUME_URL,"_blank","noopener");return}modal.classList.add("on")};
+$("#view").onclick=()=>modal.classList.add("on");
+$("#close").onclick=()=>modal.classList.remove("on");
+modal.onclick=e=>{if(e.target===modal)modal.classList.remove("on")};
+addEventListener("keydown",e=>{if(e.key==="Escape")modal.classList.remove("on")});
+const dl=()=>{if(RESUME_URL){window.open(RESUME_URL,"_blank","noopener");return}modal.classList.add("on");setTimeout(()=>{try{print()}catch(e){}},350)};
+$("#dl").onclick=dl;$("#dl2").onclick=()=>{try{print()}catch(e){}};
+// theme
+$("#tg").onclick=()=>{const r=document.documentElement,d=(r.dataset.theme||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark"))==="dark";r.dataset.theme=d?"light":"dark";draw.c=null};
+// typing
+const roles=["Data Analytics Enthusiast","Frontend Developer","Python & SQL Problem Solver"];let ri=0,ci=0,del=false;
+(function t(){const w=roles[ri],el=$("#typed");el.textContent=w.slice(0,ci);
+ if(!del&&ci===w.length){del=true;return setTimeout(t,1400)}
+ if(del&&ci===0){del=false;ri=(ri+1)%roles.length}
+ ci+=del?-1:1;setTimeout(t,del?35:70)})();
+// reveal + counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);
+ e.target.querySelectorAll("[data-n]").forEach(c=>{const n=+c.dataset.n,d=+c.dataset.d||0,s=c.dataset.s||"",t0=performance.now();
+  (function f(t){const p=Math.min((t-t0)/1400,1),v=n*(1-Math.pow(1-p,3));c.textContent=v.toFixed(d)+s;if(p<1)requestAnimationFrame(f)})(t0)})}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(e=>io.observe(e));
+// Submit through Formspree without leaving the portfolio page.
+const contactForm=$("#contact-form"),contactStatus=$("#contact-status");
+contactForm.addEventListener("submit",async e=>{
+ e.preventDefault();
+ const submitButton=contactForm.querySelector("button[type=submit]");
+ submitButton.disabled=true;submitButton.textContent="Sending...";contactStatus.textContent="";
+ try{
+  const response=await fetch(contactForm.action,{method:"POST",body:new FormData(contactForm),headers:{Accept:"application/json"}});
+  if(!response.ok)throw new Error("Message submission failed");
+  contactForm.reset();contactStatus.textContent="Thanks, your message has been sent.";
+ }catch(error){contactStatus.textContent="Sorry, your message couldn't be sent. Please email vinaynethala07@gmail.com instead."}
+ finally{submitButton.disabled=false;submitButton.textContent="Send message"}
+});
+// network canvas
+const cv=$("#net"),cx=cv.getContext("2d");let W,H,pts=[],mx=-999,my=-999;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;pts=Array.from({length:Math.min(70,W/16|0)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}))}
+rs();addEventListener("resize",rs);addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY});
+function draw(){const cs=getComputedStyle(document.documentElement),a=cs.getPropertyValue("--a").trim();cx.clearRect(0,0,W,H);cx.fillStyle=a;cx.strokeStyle=a;
+ pts.forEach((p,i)=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+  cx.globalAlpha=.9;cx.beginPath();cx.arc(p.x,p.y,1.8,0,7);cx.fill();
+  for(let j=i+1;j<pts.length;j++){const q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<130){cx.globalAlpha=(1-d/130)*.45;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}
+  const dm=Math.hypot(p.x-mx,p.y-my);if(dm<160){cx.globalAlpha=(1-dm/160)*.8;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(mx,my);cx.stroke()}});
+ requestAnimationFrame(draw)}
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches)draw();
+// card tilt
+document.querySelectorAll(".box").forEach(b=>{b.addEventListener("pointermove",e=>{const r=b.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;b.style.transform=`perspective(700px) rotateY(${x*5}deg) rotateX(${-y*5}deg)`});b.addEventListener("pointerleave",()=>b.style.transform="")});
+</script>
+</body>
+</html>
